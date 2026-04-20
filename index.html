@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad — Founder · Researcher · Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       DESIGN TOKENS
+       ============================================ */
+    :root {
+      --paper:        #FAFAF7;
+      --paper-2:      #F5F4F0;
+      --paper-3:      #F0EEE8;
+      --ink:          #1A1A18;
+      --ink-2:        #1A1A18;
+      --ink-3:        #6B6B63;
+      --ink-4:        #9C9C91;
+      --ink-5:        #E8E6E0;
+      --accent:       #6b1f1a;
+      --accent-warm:  #8a2b23;
+      --accent-soft:  rgba(107, 31, 26, 0.08);
+      --hairline:     #F0EEE8;
+      --hairline-2:   #E8E6E0;
+      --font-serif:   'Cormorant Garamond', 'Georgia', 'Hoefler Text', serif;
+      --font-sans:    'DM Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      --max-w:        820px;
+      --nav-h:        64px;
+      --ease-out:     cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    ::selection { background: var(--ink); color: var(--paper); }
+
+    /* ============================================
+       UNIVERSE LOADER
+       ============================================ */
+    .universe-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 700ms var(--ease-out);
+    }
+
+    .universe-loader.is-leaving { opacity: 0; pointer-events: none; }
+
+    .universe-loader canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ul-brand {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--ink);
+      transform: translateY(-8px);
+    }
+
+    .ul-mark {
+      font-family: var(--font-serif);
+      font-size: 84px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .ul-mark span { color: var(--accent); }
+
+    .ul-tag {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-4);
+      margin-top: 16px;
+    }
+
+    .ul-bar {
+      width: 120px;
+      height: 1px;
+      background: var(--hairline-2);
+      margin: 24px auto 0;
+      overflow: hidden;
+    }
+
+    .ul-bar-fill {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--ink);
+      animation: ul-fill 1600ms var(--ease-out) forwards;
+    }
+
+    @keyframes ul-fill { from { width: 0; } to { width: 100%; } }
+
+    /* ============================================
+       NAV
+       ============================================ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--hairline-2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink-3);
+      letter-spacing: 0.01em;
+      transition: color 200ms ease;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background: var(--ink);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ============================================
+       MAIN
+       ============================================ */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      padding: 80px 0 64px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-label {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-description {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink-3);
+      max-width: 560px;
+    }
+
+    .hero-description p + p { margin-top: 4px; }
+
+    /* ============================================
+       SHARED SECTION
+       ============================================ */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--hairline-2);
+      margin: 0;
+    }
+
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-4);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .view-all {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      transition: gap 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .view-all:hover { gap: 10px; }
+
+    /* ============================================
+       DOMAINS
+       ============================================ */
+    .domains {
+      padding: 56px 0;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+
+    .domains .section-label { margin-bottom: 24px; }
+
+    .domain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+    }
+
+    .domain-tags span {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    /* ============================================
+       WRITING
+       ============================================ */
+    .writing {
+      padding: 56px 0;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+
+    .writing-list { border-top: 1px solid var(--hairline); }
+
+    .writing-item {
+      display: block;
+      padding: 24px 16px;
+      margin: 0 -16px;
+      border-bottom: 1px solid var(--hairline);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 200ms ease;
+    }
+
+    .writing-item:hover { background: var(--paper-2); }
+
+    .writing-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .writing-type {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .writing-sep {
+      font-size: 12px;
+      color: var(--ink-4);
+    }
+
+    .writing-date {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--ink-4);
+    }
+
+    .writing-title {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .writing-desc {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--ink-3);
+      line-height: 1.55;
+    }
+
+    /* ============================================
+       PROJECTS
+       ============================================ */
+    .projects {
+      padding: 56px 0;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+
+    .project-card {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .project-card:first-of-type { border-top: 1px solid var(--hairline); }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      gap: 16px;
+    }
+
+    .project-name {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .project-status {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .project-desc {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--ink-3);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-stack span {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--ink-4);
+      border: 1px solid var(--hairline-2);
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    /* ============================================
+       RESUME
+       ============================================ */
+    .resume {
+      padding: 56px 0;
+      animation: fadeUp 0.8s ease 0.35s both;
+    }
+
+    .resume-entry {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .resume-entry:first-of-type { border-top: 1px solid var(--hairline); }
+
+    .resume-period {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--ink-4);
+      margin-bottom: 6px;
+    }
+
+    .resume-role {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .resume-org {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--accent-warm);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .resume-desc {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--ink-3);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       ABOUT
+       ============================================ */
+    .about {
+      padding: 56px 0;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+
+    .about-content {
+      max-width: 600px;
+    }
+
+    .about-content p {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink-3);
+      margin-bottom: 16px;
+    }
+
+    .about-content p:last-child { margin-bottom: 0; }
+
+    .pullquote {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.55;
+      padding: 24px 0 24px 24px;
+      border-left: 2px solid var(--accent);
+      margin: 28px 0;
+      font-weight: 400;
+    }
+
+    /* ============================================
+       CONTACT
+       ============================================ */
+    .contact {
+      padding: 56px 0;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+
+    .contact p {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: var(--ink-3);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s ease, color 0.2s ease;
+    }
+
+    .contact-link:hover { gap: 10px; color: var(--accent-warm); }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer {
+      border-top: 1px solid var(--hairline-2);
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover h4 { color: var(--accent); }
+
+    .footer-col p {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--ink-4);
+    }
+
+    .footer-bottom {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px 32px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--ink-4);
+    }
+
+    /* ============================================
+       ESSAY VIEW
+       ============================================ */
+    #essay-view {
+      display: none;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+      font-family: var(--font-serif);
+      color: var(--ink-2);
+    }
+
+    #essay-view.active { display: block; }
+
+    .essay-back {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-3);
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 48px;
+      transition: color 0.2s ease;
+    }
+
+    .essay-back:hover { color: var(--ink); }
+
+    .essay-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+    }
+
+    .essay-type { color: var(--accent); font-weight: 500; }
+    .essay-sep  { color: var(--ink-4); }
+    .essay-date { color: var(--ink-4); }
+
+    .essay-title {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5.5vw, 64px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .essay-dek {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--ink-3);
+      margin-bottom: 56px;
+      font-weight: 300;
+    }
+
+    .essay-body {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      line-height: 1.72;
+      color: var(--ink-2);
+    }
+
+    .essay-body p { margin-bottom: 1.2em; }
+    .essay-body p:last-child { margin-bottom: 0; }
+
+    .essay-dropcap::first-letter {
+      font-family: var(--font-serif);
+      font-size: 4.2em;
+      line-height: 0.85;
+      float: left;
+      padding: 0.08em 0.12em 0 0;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .essay-pullquote {
+      margin: 48px 0;
+      padding: 8px 0 8px 28px;
+      border-left: 2px solid var(--accent);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 26px;
+      line-height: 1.45;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .essay-section-break {
+      text-align: center;
+      color: var(--ink-4);
+      font-family: var(--font-serif);
+      font-size: 22px;
+      margin: 72px 0;
+    }
+
+    .essay-footer {
+      margin-top: 96px;
+      padding-top: 32px;
+      border-top: 1px solid var(--hairline-2);
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--ink-4);
+    }
+
+    .essay-footer a { color: var(--ink); }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--hairline-2);
+        padding: 16px 32px 24px;
+        gap: 16px;
+      }
+
+      .hero { padding: 48px 0 40px; }
+      .hero h1 { font-size: 44px; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+      .domain-tags { gap: 10px 20px; }
+      .project-header { flex-direction: column; gap: 8px; }
+      .contact-links { flex-direction: column; gap: 16px; }
+      .essay-footer { flex-direction: column; gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      main, #essay-view { padding-left: 20px; padding-right: 20px; }
+      .nav-inner { padding: 0 20px; }
+      .footer-inner, .footer-bottom { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       UNIVERSE LOADER
+       ============================================ -->
+  <div class="universe-loader" id="universeLoader">
+    <canvas id="loaderCanvas"></canvas>
+    <div class="ul-brand">
+      <div class="ul-mark">M<span>.</span></div>
+      <div class="ul-tag">Founder · Researcher · Builder</div>
+      <div class="ul-bar"><span class="ul-bar-fill"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAV
+       ============================================ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="navLogoLink">Muhammad</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT (home view)
+       ============================================ -->
+  <main id="homeView">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-label">Founder · Researcher · Builder</div>
+      <h1>Muhammad</h1>
+      <div class="hero-description">
+        <p>Working at the intersection of AI, markets, and fundamental inquiry.</p>
+        <p>Interested in what holds under pressure — ideas, systems, and people.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- DOMAINS -->
+    <section class="domains">
+      <div class="section-label">Domains</div>
+      <div class="domain-tags">
+        <span>Artificial Intelligence</span>
+        <span>Markets</span>
+        <span>Physics</span>
+        <span>Philosophy</span>
+        <span>Entrepreneurship</span>
+        <span>Neuroscience</span>
+        <span>Consciousness</span>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- WRITING -->
+    <section class="writing" id="writing">
+      <div class="section-header">
+        <div class="section-label">Selected Writing</div>
+        <a class="view-all">All Writing →</a>
+      </div>
+      <div class="writing-list">
+        <a class="writing-item" data-essay="are-you-your-body">
+          <div class="writing-meta">
+            <span class="writing-type">Essay</span>
+            <span class="writing-sep">—</span>
+            <span class="writing-date">2026-03-10</span>
+          </div>
+          <div class="writing-title">Are You Your Body?</div>
+          <div class="writing-desc">Why the mind-body problem is not an abstract puzzle — it is about you, right now.</div>
+        </a>
+        <a class="writing-item" data-essay="impermanence-as-practice">
+          <div class="writing-meta">
+            <span class="writing-type">Essay</span>
+            <span class="writing-sep">—</span>
+            <span class="writing-date">2026-01-22</span>
+          </div>
+          <div class="writing-title">Impermanence as Practice</div>
+          <div class="writing-desc">On non-attachment, ego dissolution, and what Buddhist teachings reveal when lived rather than read.</div>
+        </a>
+        <a class="writing-item">
+          <div class="writing-meta">
+            <span class="writing-type">Poetry</span>
+            <span class="writing-sep">—</span>
+            <span class="writing-date">2025-12-05</span>
+          </div>
+          <div class="writing-title">Collected Poems</div>
+          <div class="writing-desc">Reflections on identity, mindfulness, and meaning — written between worlds.</div>
+        </a>
+        <a class="writing-item">
+          <div class="writing-meta">
+            <span class="writing-type">Paper</span>
+            <span class="writing-sep">—</span>
+            <span class="writing-date">2025-11-10</span>
+          </div>
+          <div class="writing-title">On the Limits of Quantitative Models</div>
+          <div class="writing-desc">Where formalization ends and judgment begins. A working note on the epistemology of risk.</div>
+        </a>
+        <a class="writing-item">
+          <div class="writing-meta">
+            <span class="writing-type">Paper</span>
+            <span class="writing-sep">—</span>
+            <span class="writing-date">2025-09-18</span>
+          </div>
+          <div class="writing-title">Panpsychism and the Hard Problem</div>
+          <div class="writing-desc">A critical survey of materialist, panpsychist, and many-worlds approaches to consciousness.</div>
+        </a>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="section-header">
+        <div class="section-label">Projects</div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">AgentVault</div>
+          <span class="project-status">Active</span>
+        </div>
+        <div class="project-desc">
+          Trust infrastructure protocol for autonomous AI agents. Identity, reputation, contracts, and discovery layer for the agentic economy.
+        </div>
+        <div class="project-stack">
+          <span>TypeScript SDK</span>
+          <span>Solidity</span>
+          <span>Base L2</span>
+          <span>Smart Contracts</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">Voice AI for Local Business</div>
+          <span class="project-status">Active</span>
+        </div>
+        <div class="project-desc">
+          Intelligent voice AI system for businesses with high inbound call volume. Full-stack solution including sales landing page and admin dashboard.
+        </div>
+        <div class="project-stack">
+          <span>Twilio</span>
+          <span>Claude Sonnet</span>
+          <span>ElevenLabs</span>
+          <span>React</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RESUME -->
+    <section class="resume" id="resume">
+      <div class="section-header">
+        <div class="section-label">Resume</div>
+      </div>
+      <div class="resume-entry">
+        <div class="resume-period">2024 — Present</div>
+        <div class="resume-role">Founder</div>
+        <div class="resume-org">AgentVault</div>
+        <div class="resume-desc">Building trust infrastructure for autonomous AI agents — identity, reputation, contracts, and discovery protocols for the agentic economy.</div>
+      </div>
+      <div class="resume-entry">
+        <div class="resume-period">2024 — Present</div>
+        <div class="resume-role">Founder</div>
+        <div class="resume-org">Voice AI Venture</div>
+        <div class="resume-desc">Designing and deploying intelligent voice AI systems for local businesses, focusing on dental offices and high-volume inbound call environments.</div>
+      </div>
+      <div class="resume-entry">
+        <div class="resume-period">2022 — Present</div>
+        <div class="resume-role">Student</div>
+        <div class="resume-org">Western University</div>
+        <div class="resume-desc">Studying at the intersection of technology, finance, and fundamental inquiry. Active in networking across capital markets, entrepreneurship, and AI research.</div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="section-header">
+        <div class="section-label">About</div>
+      </div>
+      <div class="about-content">
+        <p>
+          I grew up in Pakistan and moved to Canada to study at Western University. My work sits at the intersection of AI, financial markets, and philosophy — I'm drawn to the questions that don't resolve cleanly.
+        </p>
+        <p>
+          I write about consciousness, identity, impermanence, and the nature of the self — drawing on Buddhist teachings, neuroscience, physics, and direct experience. I believe the most important ideas live at the borders between disciplines.
+        </p>
+        <div class="pullquote">
+          "Life is like a call option — you know the downside, but the upside is infinite."
+        </div>
+        <p>
+          Outside of work, I train Muay Thai and boxing, dance salsa, play poker and violin, and read voraciously across physics, psychology, and philosophy. I speak English and Urdu, and I'm learning French.
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-header">
+        <div class="section-label">Contact</div>
+      </div>
+      <p>I'm always open to conversations about AI, markets, philosophy, or new ventures. Reach out below.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:your@email.com">Email →</a>
+        <a class="contact-link" href="https://linkedin.com/" target="_blank">LinkedIn →</a>
+        <a class="contact-link" href="https://github.com/" target="_blank">GitHub →</a>
+        <a class="contact-link" href="https://x.com/" target="_blank">X / Twitter →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       ESSAY VIEW
+       ============================================ -->
+  <div id="essay-view">
+    <a class="essay-back" id="essayBack">← All Writing</a>
+
+    <div class="essay-meta">
+      <span class="essay-type" id="essayType">Essay</span>
+      <span class="essay-sep">—</span>
+      <span class="essay-date" id="essayDate">2026-03-10</span>
+      <span class="essay-sep">·</span>
+      <span class="essay-date" id="essayRead">9 min read</span>
+    </div>
+
+    <h1 class="essay-title" id="essayTitle">Are You Your Body?</h1>
+
+    <p class="essay-dek" id="essayDek">
+      Why the mind-body problem is not an abstract puzzle — it is about you, right now.
+    </p>
+
+    <div class="essay-body" id="essayBody">
+      <p class="essay-dropcap">
+        here is a question most of us avoid because it seems impractical. It is not. When you say <em>I</em>, what do you mean? The body you wash each morning? The continuous stream of thought that disappears every night in sleep? Neither survives a careful look.
+      </p>
+      <p>
+        The mind-body problem is commonly introduced as a puzzle for professional philosophers. This is wrong. It is a problem about you, right now, reading this. If the thing you call <em>I</em> cannot be located, you are living a life on assumptions you have never examined.
+      </p>
+      <blockquote class="essay-pullquote">
+        The self is not a thing you have. It is a pattern that holds — and when it holds loosely, you are freer than you thought.
+      </blockquote>
+      <p>
+        Neuroscience gives us a tidy story: there is no "center" in the brain where experience assembles. Consciousness is not a room; it is a process distributed across billions of cells. And yet the feeling of being someone — of being <em>here</em>, behind the eyes — is the most undeniable fact any of us has.
+      </p>
+      <p>
+        Buddhist practice arrives at the same conclusion from the opposite direction. Sit still long enough and the "I" dissolves into its parts: a sensation here, a thought there, a story tying them together. The tying is the trick. Loosen it and something quieter stays.
+      </p>
+      <p>
+        Both traditions agree on what follows. If the self is less solid than it feels, <em>everything</em> you build on top of it — ambition, fear, identity — is also less solid. This is not bad news. It is the first real freedom.
+      </p>
+      <div class="essay-section-break">§</div>
+      <p>
+        I do not think the mind-body problem will be solved in my lifetime. I also do not think that matters. Living as if the question were open — rather than pretending we have the answer — is itself a practice. It changes how you hold a disagreement, how you hold a loss, how you hold yourself at 3 a.m.
+      </p>
+      <p>
+        The body you have is real. The mind you have is real. Whether they are the same thing is still, thankfully, an open question.
+      </p>
+    </div>
+
+    <div class="essay-footer">
+      <span>Filed under <a>Consciousness</a> · <a>Philosophy</a></span>
+      <span>← <a>Previous</a> · <a>Next</a> →</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       FOOTER (always visible)
+       ============================================ -->
+  <footer id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="#writing">
+          <h4>Writing</h4>
+          <p>Essays, poetry, papers</p>
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="#projects">
+          <h4>Projects</h4>
+          <p>Current &amp; past work</p>
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="#resume">
+          <h4>Resume</h4>
+          <p>Background &amp; credentials</p>
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="#about">
+          <h4>About</h4>
+          <p>Biography</p>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Muhammad. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script>
+    /* ---- Universe Loader ---- */
+    (function () {
+      const loader  = document.getElementById('universeLoader');
+      const canvas  = document.getElementById('loaderCanvas');
+      const ctx     = canvas.getContext('2d');
+      const STARS   = 260;
+      const DURATION = 1600;
+      let w, h, stars = [], raf;
+
+      function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        w = canvas.width  = innerWidth  * dpr;
+        h = canvas.height = innerHeight * dpr;
+        canvas.style.width  = innerWidth  + 'px';
+        canvas.style.height = innerHeight + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function makeStars() {
+        stars = [];
+        for (let i = 0; i < STARS; i++) {
+          stars.push({ x: (Math.random() - 0.5) * innerWidth, y: (Math.random() - 0.5) * innerHeight, z: Math.random() * innerWidth, pz: 0 });
+        }
+      }
+
+      function tick() {
+        ctx.fillStyle = 'rgba(255,255,255,1)';
+        ctx.fillRect(0, 0, innerWidth, innerHeight);
+        const cx = innerWidth / 2, cy = innerHeight / 2;
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          s.pz = s.z;
+          s.z -= 3;
+          if (s.z < 1) { s.x = (Math.random() - 0.5) * innerWidth; s.y = (Math.random() - 0.5) * innerHeight; s.z = innerWidth; s.pz = s.z; }
+          const k  = 128 / s.z, kp = 128 / s.pz;
+          const x  = s.x * k  + cx, y  = s.y * k  + cy;
+          const px = s.x * kp + cx, py = s.y * kp + cy;
+          const a  = Math.min(1, (1 - s.z / innerWidth) * 1.2);
+          ctx.strokeStyle = `rgba(26,26,24,${0.08 + a * 0.28})`;
+          ctx.lineWidth = Math.max(0.3, (1 - s.z / innerWidth) * 1.2);
+          ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(x, y); ctx.stroke();
+        }
+        raf = requestAnimationFrame(tick);
+      }
+
+      resize(); makeStars(); tick();
+      window.addEventListener('resize', () => { resize(); makeStars(); });
+
+      setTimeout(() => {
+        loader.classList.add('is-leaving');
+        setTimeout(() => { cancelAnimationFrame(raf); loader.remove(); }, 700);
+      }, DURATION);
+    })();
+
+    /* ---- Mobile menu ---- */
+    const menuBtn  = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    /* ---- Smooth scroll (home links) ---- */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+        }
+      });
+    });
+
+    /* ---- Essay routing ---- */
+    const homeView  = document.getElementById('homeView');
+    const essayView = document.getElementById('essay-view');
+    const essayBack = document.getElementById('essayBack');
+    const footer    = document.getElementById('siteFooter');
+
+    function openEssay() {
+      homeView.style.display  = 'none';
+      essayView.classList.add('active');
+      footer.style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    function closeEssay() {
+      homeView.style.display  = '';
+      essayView.classList.remove('active');
+      window.scrollTo(0, 0);
+    }
+
+    document.querySelectorAll('.writing-item[data-essay]').forEach(item => {
+      item.addEventListener('click', openEssay);
+    });
+
+    essayBack.addEventListener('click', closeEssay);
+
+    /* ---- Nav logo returns home ---- */
+    document.getElementById('navLogoLink').addEventListener('click', function (e) {
+      if (essayView.classList.contains('active')) {
+        e.preventDefault();
+        closeEssay();
+      }
+    });
+  </script>
+
+</body>
+</html>
