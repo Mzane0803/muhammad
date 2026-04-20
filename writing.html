@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — Muhammad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper:        #FAFAF7;
+      --paper-2:      #F5F4F0;
+      --paper-3:      #F0EEE8;
+      --ink:          #1A1A18;
+      --ink-2:        #1A1A18;
+      --ink-3:        #6B6B63;
+      --ink-4:        #9C9C91;
+      --accent:       #6b1f1a;
+      --accent-warm:  #8a2b23;
+      --accent-soft:  rgba(107, 31, 26, 0.08);
+      --hairline:     #F0EEE8;
+      --hairline-2:   #E8E6E0;
+      --font-serif:   'Cormorant Garamond', 'Georgia', 'Hoefler Text', serif;
+      --font-sans:    'DM Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      --max-w:        820px;
+      --nav-h:        64px;
+      --ease-out:     cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: var(--font-sans); background: var(--paper); color: var(--ink); line-height: 1.6; font-size: 15px; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--ink); color: var(--paper); }
+
+    /* ---------- NAV ---------- */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--hairline-2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); font-size: 14px; font-weight: 400; color: var(--ink-3); letter-spacing: 0.01em; transition: color 200ms ease; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.active { color: var(--ink); }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .mobile-menu-btn span { display: block; width: 20px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: all 0.3s ease; }
+
+    /* ---------- MAIN ---------- */
+    main { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; animation: fadeUp 0.8s ease both; }
+
+    /* ---------- PAGE HEADER ---------- */
+    .archive-header { padding: 80px 0 48px; }
+    .archive-eyebrow {
+      font-family: var(--font-sans); font-size: 12px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    .archive-title {
+      font-family: var(--font-serif); font-size: clamp(48px, 8vw, 80px);
+      font-weight: 300; line-height: 1.05; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 28px;
+    }
+    .archive-desc {
+      font-family: var(--font-sans); font-size: 16px; line-height: 1.75;
+      color: var(--ink-3); max-width: 560px;
+    }
+
+    /* ---------- FILTER BAR ---------- */
+    .filter-bar {
+      display: flex; gap: 24px; padding: 24px 0;
+      border-top: 1px solid var(--hairline-2);
+      border-bottom: 1px solid var(--hairline-2);
+      margin-bottom: 8px;
+    }
+    .filter-btn {
+      font-family: var(--font-sans); font-size: 13px; font-weight: 500;
+      color: var(--ink-3); cursor: pointer; background: none; border: none;
+      padding: 0; letter-spacing: 0.02em;
+      transition: color 0.2s ease;
+    }
+    .filter-btn:hover { color: var(--ink); }
+    .filter-btn.active { color: var(--accent); }
+
+    /* ---------- WRITING LIST ---------- */
+    .writing-list { padding: 8px 0 80px; }
+
+    .writing-item {
+      display: block; padding: 28px 16px; margin: 0 -16px;
+      border-bottom: 1px solid var(--hairline);
+      cursor: pointer; border-radius: 4px;
+      transition: background 200ms ease;
+    }
+    .writing-item:hover { background: var(--paper-2); }
+
+    .writing-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .writing-type { font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--accent); }
+    .writing-sep { font-size: 12px; color: var(--ink-4); }
+    .writing-date { font-family: var(--font-sans); font-size: 13px; color: var(--ink-4); }
+    .writing-title { font-family: var(--font-sans); font-size: 19px; font-weight: 600; color: var(--ink); margin-bottom: 6px; line-height: 1.35; }
+    .writing-desc { font-family: var(--font-sans); font-size: 14px; color: var(--ink-3); line-height: 1.55; }
+
+    .writing-item.hidden { display: none; }
+
+    /* ---------- ESSAY VIEW ---------- */
+    #essay-view { display: none; max-width: 680px; margin: 0 auto; padding: 80px 32px 120px; font-family: var(--font-serif); color: var(--ink-2); }
+    #essay-view.active { display: block; }
+    .essay-back { font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--ink-3); cursor: pointer; display: inline-block; margin-bottom: 48px; transition: color 0.2s ease; }
+    .essay-back:hover { color: var(--ink); }
+    .essay-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; font-family: var(--font-sans); font-size: 13px; }
+    .essay-type { color: var(--accent); font-weight: 500; }
+    .essay-sep, .essay-date { color: var(--ink-4); }
+    .essay-title { font-family: var(--font-serif); font-size: clamp(40px, 5.5vw, 64px); font-weight: 300; line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; }
+    .essay-dek { font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.5; color: var(--ink-3); margin-bottom: 56px; font-weight: 300; }
+    .essay-body { font-family: var(--font-serif); font-size: 19px; line-height: 1.72; color: var(--ink-2); }
+    .essay-body p { margin-bottom: 1.2em; }
+    .essay-body p:last-child { margin-bottom: 0; }
+    .essay-dropcap::first-letter { font-family: var(--font-serif); font-size: 4.2em; line-height: 0.85; float: left; padding: 0.08em 0.12em 0 0; color: var(--ink); font-weight: 400; }
+    .essay-pullquote { margin: 48px 0; padding: 8px 0 8px 28px; border-left: 2px solid var(--accent); font-family: var(--font-serif); font-style: italic; font-size: 26px; line-height: 1.45; color: var(--ink); font-weight: 400; }
+    .essay-section-break { text-align: center; color: var(--ink-4); font-family: var(--font-serif); font-size: 22px; margin: 72px 0; }
+    .essay-footer { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--hairline-2); display: flex; justify-content: space-between; font-family: var(--font-sans); font-size: 13px; color: var(--ink-4); }
+    .essay-footer a { color: var(--ink); }
+
+    /* ---------- FOOTER ---------- */
+    footer { border-top: 1px solid var(--hairline-2); margin-top: 24px; }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; padding: 48px 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 6px; transition: color 0.2s ease; }
+    .footer-col a:hover h4 { color: var(--accent); }
+    .footer-col p { font-family: var(--font-sans); font-size: 13px; color: var(--ink-4); }
+    .footer-bottom { max-width: var(--max-w); margin: 0 auto; padding: 0 32px 32px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-4); }
+
+    /* ---------- ANIM ---------- */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--hairline-2); padding: 16px 32px 24px; gap: 16px; }
+      .archive-header { padding: 48px 0 32px; }
+      .archive-title { font-size: 44px; }
+      .filter-bar { gap: 16px; flex-wrap: wrap; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+      .essay-footer { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      main, #essay-view { padding-left: 20px; padding-right: 20px; }
+      .nav-inner { padding: 0 20px; }
+      .footer-inner, .footer-bottom { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Muhammad</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active">Writing</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#resume">Resume</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HOME VIEW: ARCHIVE -->
+  <main id="homeView">
+
+    <header class="archive-header">
+      <div class="archive-eyebrow">Archive</div>
+      <h1 class="archive-title">Writing</h1>
+      <p class="archive-desc">
+        Essays, poetry, and working papers on consciousness, markets, AI, and philosophy — written between worlds.
+      </p>
+    </header>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Essay">Essays</button>
+      <button class="filter-btn" data-filter="Poetry">Poetry</button>
+      <button class="filter-btn" data-filter="Paper">Papers</button>
+    </div>
+
+    <div class="writing-list" id="writingList">
+      <a class="writing-item" data-type="Essay" data-essay="are-you-your-body">
+        <div class="writing-meta">
+          <span class="writing-type">Essay</span>
+          <span class="writing-sep">—</span>
+          <span class="writing-date">2026-03-10</span>
+          <span class="writing-sep">·</span>
+          <span class="writing-date">9 min read</span>
+        </div>
+        <div class="writing-title">Are You Your Body?</div>
+        <div class="writing-desc">Why the mind-body problem is not an abstract puzzle — it is about you, right now.</div>
+      </a>
+
+      <a class="writing-item" data-type="Essay" data-essay="impermanence-as-practice">
+        <div class="writing-meta">
+          <span class="writing-type">Essay</span>
+          <span class="writing-sep">—</span>
+          <span class="writing-date">2026-01-22</span>
+          <span class="writing-sep">·</span>
+          <span class="writing-date">7 min read</span>
+        </div>
+        <div class="writing-title">Impermanence as Practice</div>
+        <div class="writing-desc">On non-attachment, ego dissolution, and what Buddhist teachings reveal when lived rather than read.</div>
+      </a>
+
+      <a class="writing-item" data-type="Poetry">
+        <div class="writing-meta">
+          <span class="writing-type">Poetry</span>
+          <span class="writing-sep">—</span>
+          <span class="writing-date">2025-12-05</span>
+        </div>
+        <div class="writing-title">Collected Poems</div>
+        <div class="writing-desc">Reflections on identity, mindfulness, and meaning — written between worlds.</div>
+      </a>
+
+      <a class="writing-item" data-type="Paper">
+        <div class="writing-meta">
+          <span class="writing-type">Paper</span>
+          <span class="writing-sep">—</span>
+          <span class="writing-date">2025-11-10</span>
+          <span class="writing-sep">·</span>
+          <span class="writing-date">Working note</span>
+        </div>
+        <div class="writing-title">On the Limits of Quantitative Models</div>
+        <div class="writing-desc">Where formalization ends and judgment begins. A working note on the epistemology of risk.</div>
+      </a>
+
+      <a class="writing-item" data-type="Paper">
+        <div class="writing-meta">
+          <span class="writing-type">Paper</span>
+          <span class="writing-sep">—</span>
+          <span class="writing-date">2025-09-18</span>
+        </div>
+        <div class="writing-title">Panpsychism and the Hard Problem</div>
+        <div class="writing-desc">A critical survey of materialist, panpsychist, and many-worlds approaches to consciousness.</div>
+      </a>
+
+      <a class="writing-item" data-type="Essay">
+        <div class="writing-meta">
+          <span class="writing-type">Essay</span>
+          <span class="writing-sep">—</span>
+          <span class="writing-date">2025-08-02</span>
+          <span class="writing-sep">·</span>
+          <span class="writing-date">6 min read</span>
+        </div>
+        <div class="writing-title">The Agentic Economy</div>
+        <div class="writing-desc">What trust, identity, and contracts look like when the counterparty is not a human.</div>
+      </a>
+
+      <a class="writing-item" data-type="Essay">
+        <div class="writing-meta">
+          <span class="writing-type">Essay</span>
+          <span class="writing-sep">—</span>
+          <span class="writing-date">2025-06-14</span>
+          <span class="writing-sep">·</span>
+          <span class="writing-date">5 min read</span>
+        </div>
+        <div class="writing-title">Between Worlds</div>
+        <div class="writing-desc">On Pakistan, Canada, and what carries across the move — and what does not.</div>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ESSAY VIEW -->
+  <div id="essay-view">
+    <a class="essay-back" id="essayBack">← All Writing</a>
+    <div class="essay-meta">
+      <span class="essay-type">Essay</span>
+      <span class="essay-sep">—</span>
+      <span class="essay-date">2026-03-10</span>
+      <span class="essay-sep">·</span>
+      <span class="essay-date">9 min read</span>
+    </div>
+    <h1 class="essay-title">Are You Your Body?</h1>
+    <p class="essay-dek">
+      Why the mind-body problem is not an abstract puzzle — it is about you, right now.
+    </p>
+    <div class="essay-body">
+      <p class="essay-dropcap">
+        here is a question most of us avoid because it seems impractical. It is not. When you say <em>I</em>, what do you mean? The body you wash each morning? The continuous stream of thought that disappears every night in sleep? Neither survives a careful look.
+      </p>
+      <p>
+        The mind-body problem is commonly introduced as a puzzle for professional philosophers. This is wrong. It is a problem about you, right now, reading this. If the thing you call <em>I</em> cannot be located, you are living a life on assumptions you have never examined.
+      </p>
+      <blockquote class="essay-pullquote">
+        The self is not a thing you have. It is a pattern that holds — and when it holds loosely, you are freer than you thought.
+      </blockquote>
+      <p>
+        Neuroscience gives us a tidy story: there is no "center" in the brain where experience assembles. Consciousness is not a room; it is a process distributed across billions of cells. And yet the feeling of being someone — of being <em>here</em>, behind the eyes — is the most undeniable fact any of us has.
+      </p>
+      <p>
+        Buddhist practice arrives at the same conclusion from the opposite direction. Sit still long enough and the "I" dissolves into its parts: a sensation here, a thought there, a story tying them together. The tying is the trick. Loosen it and something quieter stays.
+      </p>
+      <p>
+        Both traditions agree on what follows. If the self is less solid than it feels, <em>everything</em> you build on top of it — ambition, fear, identity — is also less solid. This is not bad news. It is the first real freedom.
+      </p>
+      <div class="essay-section-break">§</div>
+      <p>
+        I do not think the mind-body problem will be solved in my lifetime. I also do not think that matters. Living as if the question were open — rather than pretending we have the answer — is itself a practice. It changes how you hold a disagreement, how you hold a loss, how you hold yourself at 3 a.m.
+      </p>
+      <p>
+        The body you have is real. The mind you have is real. Whether they are the same thing is still, thankfully, an open question.
+      </p>
+    </div>
+    <div class="essay-footer">
+      <span>Filed under <a>Consciousness</a> · <a>Philosophy</a></span>
+      <span>← <a>Previous</a> · <a>Next</a> →</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="writing.html">
+          <h4>Writing</h4>
+          <p>Essays, poetry, papers</p>
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="index.html#projects">
+          <h4>Projects</h4>
+          <p>Current &amp; past work</p>
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="index.html#resume">
+          <h4>Resume</h4>
+          <p>Background &amp; credentials</p>
+        </a>
+      </div>
+      <div class="footer-col">
+        <a href="index.html#about">
+          <h4>About</h4>
+          <p>Biography</p>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Muhammad. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    /* Mobile menu */
+    const menuBtn  = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    /* Type filter */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.writing-item');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        items.forEach(it => {
+          if (f === 'all' || it.dataset.type === f) it.classList.remove('hidden');
+          else it.classList.add('hidden');
+        });
+      });
+    });
+
+    /* Essay routing */
+    const homeView  = document.getElementById('homeView');
+    const essayView = document.getElementById('essay-view');
+    const essayBack = document.getElementById('essayBack');
+
+    function openEssay() {
+      homeView.style.display = 'none';
+      essayView.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+    function closeEssay() {
+      homeView.style.display = '';
+      essayView.classList.remove('active');
+      window.scrollTo(0, 0);
+    }
+
+    document.querySelectorAll('.writing-item[data-essay]').forEach(item => {
+      item.addEventListener('click', openEssay);
+    });
+    essayBack.addEventListener('click', closeEssay);
+  </script>
+
+</body>
+</html>
