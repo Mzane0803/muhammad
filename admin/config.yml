@@ -1,0 +1,90 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://mzane0803.github.io/muhammad/
+display_url: https://mzane0803.github.io/muhammad/
+logo_url: /assets/favicon.svg
+
+collections:
+  - name: "writings"
+    label: "Writing"
+    label_singular: "Entry"
+    folder: "_writings"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{type}} · {{date | date('YYYY-MM-DD')}} · {{title}}"
+    sortable_fields: ['date', 'title', 'type']
+    view_filters:
+      - label: "Essays"
+        field: type
+        pattern: "Essay"
+      - label: "Poetry"
+        field: type
+        pattern: "Poetry"
+      - label: "Papers"
+        field: type
+        pattern: "Paper"
+    fields:
+      - { label: "Type", name: "type", widget: "select", options: ["Essay", "Poetry", "Paper"], default: "Essay" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+      - { label: "Reading time (e.g. '9 min read')", name: "read_time", widget: "string", required: false }
+      - { label: "Short description (one sentence, shown in the archive)", name: "description", widget: "text" }
+      - { label: "Dek (optional italic subhead under the title)", name: "dek", widget: "text", required: false }
+      - { label: "Filed under (tags)", name: "tags", widget: "list", required: false, default: [] }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{name}} · {{status}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Status", name: "status", widget: "select", options: ["Active", "Shipped", "Archived"], default: "Active" }
+      - { label: "Order (lower = higher on page)", name: "order", widget: "number", default: 1 }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Stack (comma-separated tags)", name: "stack", widget: "list", default: [] }
+      - { label: "Hidden from site", name: "hidden", widget: "boolean", default: false }
+
+  - name: "resume"
+    label: "Resume Entries"
+    label_singular: "Entry"
+    folder: "_resume"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{period}} · {{role}} · {{org}}"
+    fields:
+      - { label: "Period (e.g. '2025 to Present')", name: "period", widget: "string" }
+      - { label: "Order (lower = higher on page)", name: "order", widget: "number", default: 1 }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Organization", name: "org", widget: "string" }
+      - { label: "Description (one or two sentences)", name: "description", widget: "text" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "about"
+        label: "About / Hero"
+        file: "_data/site.yml"
+        fields:
+          - { label: "Hero label (above name)", name: "hero_label", widget: "string", default: "Founder · Researcher · Builder" }
+          - { label: "Hero line 1", name: "hero_line1", widget: "string" }
+          - { label: "Hero line 2", name: "hero_line2", widget: "string" }
+          - { label: "Domains (comma-separated)", name: "domains", widget: "list" }
+          - { label: "About paragraph 1", name: "about_p1", widget: "text" }
+          - { label: "About paragraph 2", name: "about_p2", widget: "text" }
+          - { label: "Pullquote", name: "pullquote", widget: "text" }
+          - { label: "About paragraph 3", name: "about_p3", widget: "text" }
+          - { label: "Contact blurb", name: "contact_blurb", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "VSCO URL", name: "vsco", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
