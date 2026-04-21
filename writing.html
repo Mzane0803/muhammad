@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     :root {
       --paper:        #FAFAF7;
@@ -192,85 +193,7 @@
     </div>
 
     <div class="writing-list" id="writingList">
-      <a class="writing-item" data-type="Essay" data-essay="are-you-your-body">
-        <div class="writing-meta">
-          <span class="writing-type">Essay</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">2026-03-10</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">9 min read</span>
-        </div>
-        <div class="writing-title">Are You Your Body?</div>
-        <div class="writing-desc">Why the mind-body problem is not an abstract puzzle. It is about you, right now.</div>
-      </a>
-
-      <a class="writing-item" data-type="Essay" data-essay="impermanence-as-practice">
-        <div class="writing-meta">
-          <span class="writing-type">Essay</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">2026-01-22</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">7 min read</span>
-        </div>
-        <div class="writing-title">Impermanence as Practice</div>
-        <div class="writing-desc">On non-attachment, ego dissolution, and what Buddhist teachings reveal when lived rather than read.</div>
-      </a>
-
-      <a class="writing-item" data-type="Poetry">
-        <div class="writing-meta">
-          <span class="writing-type">Poetry</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">2025-12-05</span>
-        </div>
-        <div class="writing-title">Collected Poems</div>
-        <div class="writing-desc">Reflections on identity, mindfulness, and meaning, written between worlds.</div>
-      </a>
-
-      <a class="writing-item" data-type="Paper">
-        <div class="writing-meta">
-          <span class="writing-type">Paper</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">2025-11-10</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">Working note</span>
-        </div>
-        <div class="writing-title">On the Limits of Quantitative Models</div>
-        <div class="writing-desc">Where formalization ends and judgment begins. A working note on the epistemology of risk.</div>
-      </a>
-
-      <a class="writing-item" data-type="Paper">
-        <div class="writing-meta">
-          <span class="writing-type">Paper</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">2025-09-18</span>
-        </div>
-        <div class="writing-title">Panpsychism and the Hard Problem</div>
-        <div class="writing-desc">A critical survey of materialist, panpsychist, and many-worlds approaches to consciousness.</div>
-      </a>
-
-      <a class="writing-item" data-type="Essay">
-        <div class="writing-meta">
-          <span class="writing-type">Essay</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">2025-08-02</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">6 min read</span>
-        </div>
-        <div class="writing-title">The Agentic Economy</div>
-        <div class="writing-desc">What trust, identity, and contracts look like when the counterparty is not a human.</div>
-      </a>
-
-      <a class="writing-item" data-type="Essay">
-        <div class="writing-meta">
-          <span class="writing-type">Essay</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">2025-06-14</span>
-          <span class="writing-sep">·</span>
-          <span class="writing-date">5 min read</span>
-        </div>
-        <div class="writing-title">Between Worlds</div>
-        <div class="writing-desc">On moving between countries, and what carries across, and what does not.</div>
-      </a>
+      <div style="padding: 48px 0; font-family: var(--font-sans); color: var(--ink-4); font-size: 14px;">Loading…</div>
     </div>
 
   </main>
@@ -279,46 +202,17 @@
   <div id="essay-view">
     <a class="essay-back" id="essayBack">← All Writing</a>
     <div class="essay-meta">
-      <span class="essay-type">Essay</span>
+      <span class="essay-type" id="essayType">Essay</span>
       <span class="essay-sep">·</span>
-      <span class="essay-date">2026-03-10</span>
-      <span class="essay-sep">·</span>
-      <span class="essay-date">9 min read</span>
+      <span class="essay-date" id="essayDate"></span>
+      <span class="essay-sep" id="essayReadSep">·</span>
+      <span class="essay-date" id="essayRead"></span>
     </div>
-    <h1 class="essay-title">Are You Your Body?</h1>
-    <p class="essay-dek">
-      Why the mind-body problem is not an abstract puzzle. It is about you, right now.
-    </p>
-    <div class="essay-body">
-      <p class="essay-dropcap">
-        here is a question most of us avoid because it seems impractical. It is not. When you say <em>I</em>, what do you mean? The body you wash each morning? The continuous stream of thought that disappears every night in sleep? Neither survives a careful look.
-      </p>
-      <p>
-        The mind-body problem is commonly introduced as a puzzle for professional philosophers. This is wrong. It is a problem about you, right now, reading this. If the thing you call <em>I</em> cannot be located, you are living a life on assumptions you have never examined.
-      </p>
-      <blockquote class="essay-pullquote">
-        The self is not a thing you have. It is a pattern that holds, and when it holds loosely, you are freer than you thought.
-      </blockquote>
-      <p>
-        Neuroscience gives us a tidy story: there is no "center" in the brain where experience assembles. Consciousness is not a room; it is a process distributed across billions of cells. And yet the feeling of being someone, of being <em>here</em>, behind the eyes, is the most undeniable fact any of us has.
-      </p>
-      <p>
-        Buddhist practice arrives at the same conclusion from the opposite direction. Sit still long enough and the "I" dissolves into its parts: a sensation here, a thought there, a story tying them together. The tying is the trick. Loosen it and something quieter stays.
-      </p>
-      <p>
-        Both traditions agree on what follows. If the self is less solid than it feels, then ambition, fear, and identity, <em>everything</em> you build on top of it, is also less solid. This is not bad news. It is the first real freedom.
-      </p>
-      <div class="essay-section-break">§</div>
-      <p>
-        I do not think the mind-body problem will be solved in my lifetime. I also do not think that matters. Living as if the question were open, rather than pretending we have the answer, is itself a practice. It changes how you hold a disagreement, how you hold a loss, how you hold yourself at 3 a.m.
-      </p>
-      <p>
-        The body you have is real. The mind you have is real. Whether they are the same thing is still, thankfully, an open question.
-      </p>
-    </div>
+    <h1 class="essay-title" id="essayTitle"></h1>
+    <p class="essay-dek" id="essayDek"></p>
+    <div class="essay-body" id="essayBody"></div>
     <div class="essay-footer">
-      <span>Filed under <a>Consciousness</a> · <a>Philosophy</a></span>
-      <span>← <a>Previous</a> · <a>Next</a> →</span>
+      <span id="essayTags"></span>
     </div>
   </div>
 
@@ -362,41 +256,113 @@
     menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+    /* Views */
+    const homeView  = document.getElementById('homeView');
+    const essayView = document.getElementById('essay-view');
+    const essayBack = document.getElementById('essayBack');
+    const listEl    = document.getElementById('writingList');
+
+    const fmtDate = iso => {
+      if (!iso) return '';
+      const d = new Date(iso + 'T00:00:00');
+      if (isNaN(d)) return iso;
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    };
+    const escapeHtml = s => String(s || '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+    let WRITINGS = [];
+
+    function renderList(filter) {
+      const visible = WRITINGS.filter(w => filter === 'all' || w.type === filter);
+      if (!visible.length) {
+        listEl.innerHTML = '<div style="padding: 48px 0; font-family: var(--font-sans); color: var(--ink-4); font-size: 14px;">Nothing here yet.</div>';
+        return;
+      }
+      listEl.innerHTML = visible.map((w, i) => `
+        <a class="writing-item" data-index="${WRITINGS.indexOf(w)}" data-type="${escapeHtml(w.type)}">
+          <div class="writing-meta">
+            <span class="writing-type">${escapeHtml(w.type)}</span>
+            <span class="writing-sep">·</span>
+            <span class="writing-date">${escapeHtml(fmtDate(w.date))}</span>
+            ${w.read_time ? `<span class="writing-sep">·</span><span class="writing-date">${escapeHtml(w.read_time)}</span>` : ''}
+          </div>
+          <div class="writing-title">${escapeHtml(w.title)}</div>
+          ${w.description ? `<div class="writing-desc">${escapeHtml(w.description)}</div>` : ''}
+        </a>
+      `).join('');
+      listEl.querySelectorAll('.writing-item').forEach(el => {
+        el.addEventListener('click', () => openEssay(Number(el.dataset.index)));
+      });
+    }
+
+    function openEssay(idx) {
+      const w = WRITINGS[idx];
+      if (!w) return;
+      document.getElementById('essayType').textContent = w.type || '';
+      document.getElementById('essayDate').textContent = fmtDate(w.date);
+      const readEl  = document.getElementById('essayRead');
+      const readSep = document.getElementById('essayReadSep');
+      if (w.read_time) { readEl.textContent = w.read_time; readEl.style.display = ''; readSep.style.display = ''; }
+      else { readEl.textContent = ''; readEl.style.display = 'none'; readSep.style.display = 'none'; }
+      document.getElementById('essayTitle').textContent = w.title || '';
+      const dekEl = document.getElementById('essayDek');
+      if (w.dek) { dekEl.textContent = w.dek; dekEl.style.display = ''; }
+      else { dekEl.textContent = ''; dekEl.style.display = 'none'; }
+      document.getElementById('essayBody').innerHTML = w.body_html || '';
+      const tagsEl = document.getElementById('essayTags');
+      if (w.tags && w.tags.length) {
+        tagsEl.innerHTML = 'Filed under ' + w.tags.map(t => `<a>${escapeHtml(t)}</a>`).join(' · ');
+      } else { tagsEl.innerHTML = ''; }
+
+      homeView.style.display = 'none';
+      essayView.classList.add('active');
+      history.replaceState(null, '', '#' + (w.slug || ''));
+      window.scrollTo(0, 0);
+    }
+
+    function closeEssay() {
+      homeView.style.display = '';
+      essayView.classList.remove('active');
+      history.replaceState(null, '', window.location.pathname);
+      window.scrollTo(0, 0);
+    }
+
+    essayBack.addEventListener('click', closeEssay);
+
     /* Type filter */
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.writing-item');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const f = btn.dataset.filter;
-        items.forEach(it => {
-          if (f === 'all' || it.dataset.type === f) it.classList.remove('hidden');
-          else it.classList.add('hidden');
-        });
+        renderList(btn.dataset.filter);
       });
     });
 
-    /* Essay routing */
-    const homeView  = document.getElementById('homeView');
-    const essayView = document.getElementById('essay-view');
-    const essayBack = document.getElementById('essayBack');
+    /* Load */
+    fetch('/writings.json', { cache: 'no-cache' })
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(data => {
+        WRITINGS = Array.isArray(data) ? data : [];
+        renderList('all');
+        const slug = window.location.hash.replace(/^#/, '');
+        if (slug) {
+          const idx = WRITINGS.findIndex(w => w.slug === slug);
+          if (idx >= 0) openEssay(idx);
+        }
+      })
+      .catch(() => {
+        listEl.innerHTML = '<div style="padding: 48px 0; font-family: var(--font-sans); color: var(--ink-4); font-size: 14px;">Writings feed unavailable.</div>';
+      });
 
-    function openEssay() {
-      homeView.style.display = 'none';
-      essayView.classList.add('active');
-      window.scrollTo(0, 0);
+    /* ---- Netlify Identity: redirect invite links to /admin/ ---- */
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+        }
+      });
     }
-    function closeEssay() {
-      homeView.style.display = '';
-      essayView.classList.remove('active');
-      window.scrollTo(0, 0);
-    }
-
-    document.querySelectorAll('.writing-item[data-essay]').forEach(item => {
-      item.addEventListener('click', openEssay);
-    });
-    essayBack.addEventListener('click', closeEssay);
   </script>
 
 </body>

@@ -1,0 +1,29 @@
+title: Muhammad
+description: Founder · Researcher · Builder
+
+collections:
+  writings:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: writings
+    values:
+      published: true
+
+exclude:
+  - README.md
+  - chats
+  - project
+  - SKILL.md
+  - node_modules
+  - package.json
+  - package-lock.json
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins: []
