@@ -6,8 +6,6 @@ date: 2026-04-21
 description: A collection about longing, identity, and the weight of loving
 cover_image: /assets/uploads/01.jpg
 ---
-# **ENGLISH ROSE**
-
 *This collection was not written for or about any person*
 
 ---
