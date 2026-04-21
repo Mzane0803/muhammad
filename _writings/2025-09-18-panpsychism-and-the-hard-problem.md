@@ -8,7 +8,7 @@ dek: ""
 tags:
   - Consciousness
   - Philosophy
-published: false
+published: true
 ---
 
 *Draft in progress.*

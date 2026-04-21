@@ -8,7 +8,7 @@ dek: ""
 tags:
   - Markets
   - Philosophy
-published: false
+published: true
 ---
 **Abstract**
 

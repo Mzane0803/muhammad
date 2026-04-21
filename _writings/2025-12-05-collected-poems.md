@@ -7,7 +7,7 @@ description: "Reflections on identity, mindfulness, and meaning, written between
 dek: ""
 tags:
   - Poetry
-published: false
+published: true
 ---
 
 *Draft in progress.*

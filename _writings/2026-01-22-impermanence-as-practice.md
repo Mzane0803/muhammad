@@ -8,7 +8,7 @@ dek: "On non-attachment, ego dissolution, and what Buddhist teachings reveal whe
 tags:
   - Philosophy
   - Consciousness
-published: false
+published: true
 ---
 
 *Draft in progress.*
