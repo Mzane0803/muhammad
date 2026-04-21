@@ -1,6 +1,6 @@
 ---
 published: true
-type: Essay
+type: Poetry
 title: Hope, A poem.
 date: 2026-04-21
 description: A poem on yearning
