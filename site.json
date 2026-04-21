@@ -3,12 +3,32 @@ layout: null
 permalink: /site.json
 ---
 {
+  "seo": {
+    "title": {{ site.data.site.seo.title | jsonify }},
+    "description": {{ site.data.site.seo.description | jsonify }},
+    "og_image": {{ site.data.site.seo.og_image | jsonify }}
+  },
+  "nav": {
+    "home": {{ site.data.site.nav.home | jsonify }},
+    "writing": {{ site.data.site.nav.writing | jsonify }},
+    "projects": {{ site.data.site.nav.projects | jsonify }},
+    "resume": {{ site.data.site.nav.resume | jsonify }},
+    "about": {{ site.data.site.nav.about | jsonify }},
+    "contact": {{ site.data.site.nav.contact | jsonify }}
+  },
   "hero": {
     "tagline": {{ site.data.site.hero.tagline | jsonify }},
     "name": {{ site.data.site.hero.name | jsonify }},
-    "description": {{ site.data.site.hero.description | default: empty | jsonify }}
+    "description": {{ site.data.site.hero.description | jsonify }}
   },
-  "domains": {{ site.data.site.domains | default: empty | jsonify }},
+  "domains": {{ site.data.site.domains | jsonify }},
+  "pinned": {
+    "enabled": {{ site.data.site.pinned.enabled | jsonify }},
+    "label": {{ site.data.site.pinned.label | jsonify }},
+    "title": {{ site.data.site.pinned.title | jsonify }},
+    "body": {{ site.data.site.pinned.body | markdownify | strip_newlines | jsonify }},
+    "url": {{ site.data.site.pinned.url | jsonify }}
+  },
   "about": {
     "paragraph_1": {{ site.data.site.about.paragraph_1 | jsonify }},
     "paragraph_2": {{ site.data.site.about.paragraph_2 | jsonify }},

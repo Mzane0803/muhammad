@@ -79,9 +79,26 @@ collections:
     label: "Site Settings"
     files:
       - name: "site"
-        label: "Hero · Domains · About · Contact"
+        label: "SEO · Nav · Hero · About · Contact · Pinned"
         file: "_data/site.yml"
         fields:
+          - label: "SEO (search engines, link previews)"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Page title (browser tab)", name: "title", widget: "string", default: "Muhammad" }
+              - { label: "Meta description (shown in Google, link previews)", name: "description", widget: "text" }
+              - { label: "Open Graph image (1200x630 PNG/JPG recommended — shown on link previews)", name: "og_image", widget: "image", required: false }
+          - label: "Navigation labels"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Home", name: "home", widget: "string", default: "Home" }
+              - { label: "Writing", name: "writing", widget: "string", default: "Writing" }
+              - { label: "Projects", name: "projects", widget: "string", default: "Projects" }
+              - { label: "Resume", name: "resume", widget: "string", default: "Resume" }
+              - { label: "About", name: "about", widget: "string", default: "About" }
+              - { label: "Contact", name: "contact", widget: "string", default: "Contact" }
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -90,6 +107,15 @@ collections:
               - { label: "Name / display title", name: "name", widget: "string" }
               - { label: "Description paragraphs", name: "description", widget: "list", field: { label: "Paragraph", name: "text", widget: "string" } }
           - { label: "Domains (tags shown on homepage)", name: "domains", widget: "list" }
+          - label: "Pinned (optional homepage module shown between Resume and About)"
+            name: "pinned"
+            widget: "object"
+            fields:
+              - { label: "Show on site", name: "enabled", widget: "boolean", default: false, hint: "Toggle ON to display this block on the homepage." }
+              - { label: "Section label", name: "label", widget: "string", default: "Pinned" }
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Body (markdown)", name: "body", widget: "markdown", required: false }
+              - { label: "Link URL (optional)", name: "url", widget: "string", required: false }
           - label: "About section"
             name: "about"
             widget: "object"

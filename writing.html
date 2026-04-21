@@ -1,9 +1,23 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Writing · Muhammad</title>
+  {% assign seo_title = site.data.site.seo.title | default: "Muhammad" %}
+  {% assign seo_desc = site.data.site.seo.description | default: "Founder · Researcher · Builder" %}
+  {% assign seo_og = site.data.site.seo.og_image | default: "" %}
+  <title>Writing · {{ seo_title }}</title>
+  <meta name="description" content="{{ seo_desc }}">
+  <meta property="og:title" content="Writing · {{ seo_title }}">
+  <meta property="og:description" content="{{ seo_desc }}">
+  <meta property="og:type" content="website">
+  {% if seo_og != "" %}<meta property="og:image" content="{{ seo_og }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Writing · {{ seo_title }}">
+  <meta name="twitter:description" content="{{ seo_desc }}">
+  {% if seo_og != "" %}<meta name="twitter:image" content="{{ seo_og }}">{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
@@ -161,12 +175,12 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Muhammad</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active">Writing</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#resume">Resume</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html" data-nav="home">Home</a></li>
+        <li><a class="active" data-nav="writing">Writing</a></li>
+        <li><a href="index.html#projects" data-nav="projects">Projects</a></li>
+        <li><a href="index.html#resume" data-nav="resume">Resume</a></li>
+        <li><a href="index.html#about" data-nav="about">About</a></li>
+        <li><a href="index.html#contact" data-nav="contact">Contact</a></li>
       </ul>
       <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
         <span></span>
@@ -346,6 +360,18 @@
     });
 
     /* Load */
+    fetch('/site.json', { cache: 'no-cache' })
+      .then(r => r.ok ? r.json() : null)
+      .then(site => {
+        if (site && site.nav) {
+          document.querySelectorAll('[data-nav]').forEach(a => {
+            const key = a.dataset.nav;
+            if (site.nav[key]) a.textContent = site.nav[key];
+          });
+        }
+      })
+      .catch(() => {});
+
     fetch('/writings.json', { cache: 'no-cache' })
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
       .then(data => {

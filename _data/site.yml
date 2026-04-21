@@ -1,3 +1,16 @@
+seo:
+  title: "Muhammad"
+  description: "Founder · Researcher · Builder"
+  og_image: ""
+
+nav:
+  home: "Home"
+  writing: "Writing"
+  projects: "Projects"
+  resume: "Resume"
+  about: "About"
+  contact: "Contact"
+
 hero:
   tagline: "Founder · Researcher · Builder"
   name: "Muhammad"
@@ -10,6 +23,13 @@ domains:
   - Consciousness
   - AI
   - Markets
+
+pinned:
+  enabled: false
+  label: "Pinned"
+  title: ""
+  body: ""
+  url: ""
 
 about:
   paragraph_1: "I moved to Canada to study at Western University. My work sits at the intersection of AI, financial markets, and philosophy. I'm drawn to the questions that don't resolve cleanly."
