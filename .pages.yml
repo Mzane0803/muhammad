@@ -1,0 +1,235 @@
+media: assets/uploads
+
+content:
+  - name: writings
+    label: Writing
+    type: collection
+    path: _writings
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [type, date, title, published]
+      primary: title
+      sort: [date, title, type]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: published
+        label: "Show on site (ON = live, OFF = private draft)"
+        type: boolean
+        default: true
+      - name: type
+        label: Type
+        type: select
+        default: Essay
+        options:
+          values: [Essay, Poetry, Paper]
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: read_time
+        label: "Reading time (e.g. '9 min read')"
+        type: string
+      - name: description
+        label: "Short description (one sentence, shown in archive)"
+        type: text
+      - name: dek
+        label: "Dek (optional italic subhead under the title)"
+        type: text
+      - name: tags
+        label: "Filed under (tags)"
+        type: string
+        list: true
+      - name: cover_image
+        label: "Cover image (optional)"
+        type: image
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [order, name, status, published]
+      primary: name
+      sort: [order, name]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: published
+        label: "Show on site"
+        type: boolean
+        default: true
+      - name: order
+        label: "Order (lower number = higher on page)"
+        type: number
+        default: 1
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: status
+        label: Status
+        type: select
+        default: Active
+        options:
+          values: [Active, Shipped, Archived]
+      - name: description
+        label: Description
+        type: text
+      - name: stack
+        label: "Stack (tech tags)"
+        type: string
+        list: true
+      - name: url
+        label: "External URL (optional, makes name clickable)"
+        type: string
+      - name: body
+        label: "Notes (optional, not shown on site)"
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: resume
+    label: Resume
+    type: collection
+    path: _resume
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [order, period, role, organization, published]
+      primary: organization
+      sort: [order, period]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: published
+        label: "Show on site"
+        type: boolean
+        default: true
+      - name: order
+        label: "Order (lower number = higher on page)"
+        type: number
+        default: 1
+      - name: period
+        label: "Period (e.g. '2025 to 2026')"
+        type: string
+        required: true
+      - name: role
+        label: Role
+        type: string
+        required: true
+      - name: organization
+        label: Organization
+        type: string
+        required: true
+      - name: description
+        label: "Description (one or two sentences)"
+        type: text
+      - name: body
+        label: "Notes (optional, not shown)"
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: site
+    label: Site settings
+    type: file
+    path: _data/site.yml
+    format: yaml
+    fields:
+      - name: seo
+        label: "SEO (search engines, link previews)"
+        type: object
+        fields:
+          - name: title
+            label: "Page title (browser tab)"
+            type: string
+          - name: description
+            label: "Meta description (Google, link previews)"
+            type: text
+          - name: og_image
+            label: "Open Graph image (1200x630 PNG/JPG)"
+            type: image
+      - name: nav
+        label: "Navigation labels"
+        type: object
+        fields:
+          - { name: home, label: Home, type: string }
+          - { name: writing, label: Writing, type: string }
+          - { name: projects, label: Projects, type: string }
+          - { name: resume, label: Resume, type: string }
+          - { name: about, label: About, type: string }
+          - { name: contact, label: Contact, type: string }
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: tagline
+            label: "Tagline (above name)"
+            type: string
+          - name: name
+            label: "Name / display title"
+            type: string
+          - name: description
+            label: "Description paragraphs"
+            type: string
+            list: true
+      - name: domains
+        label: "Domains (tags shown on homepage)"
+        type: string
+        list: true
+      - name: pinned
+        label: "Pinned (optional homepage module between Resume and About)"
+        type: object
+        fields:
+          - name: enabled
+            label: "Show on site"
+            type: boolean
+            default: false
+          - name: label
+            label: "Section label"
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: "Body (markdown)"
+            type: rich-text
+            options:
+              format: markdown
+          - name: url
+            label: "Link URL (optional)"
+            type: string
+      - name: about
+        label: "About section"
+        type: object
+        fields:
+          - { name: paragraph_1, label: "Paragraph 1", type: text }
+          - { name: paragraph_2, label: "Paragraph 2", type: text }
+          - { name: pullquote, label: "Pullquote (middle, italic)", type: text }
+          - { name: paragraph_3, label: "Paragraph 3", type: text }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: blurb, label: "Blurb (shown above the links)", type: text }
+          - { name: email, label: Email, type: string }
+          - { name: linkedin, label: "LinkedIn URL", type: string }
+          - { name: vsco, label: "VSCO URL", type: string }
+          - { name: instagram, label: "Instagram URL", type: string }
