@@ -785,12 +785,9 @@
 
     <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-label">Founder · Researcher · Builder</div>
-      <h1>Muhammad</h1>
-      <div class="hero-description">
-        <p>Working at the intersection of AI, markets, and fundamental inquiry.</p>
-        <p>Interested in what holds under pressure. Ideas, systems, and people.</p>
-      </div>
+      <div class="hero-label" id="heroTagline">Founder · Researcher · Builder</div>
+      <h1 id="heroName">Muhammad</h1>
+      <div class="hero-description" id="heroDesc"></div>
     </section>
 
     <hr class="section-divider">
@@ -798,12 +795,7 @@
     <!-- DOMAINS -->
     <section class="domains">
       <div class="section-label">Domains</div>
-      <div class="domain-tags">
-        <span>Philosophy</span>
-        <span>Consciousness</span>
-        <span>AI</span>
-        <span>Markets</span>
-      </div>
+      <div class="domain-tags" id="domainTags"></div>
     </section>
 
     <hr class="section-divider">
@@ -826,36 +818,7 @@
       <div class="section-header">
         <div class="section-label">Projects</div>
       </div>
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">AgentVault</div>
-          <span class="project-status">Active</span>
-        </div>
-        <div class="project-desc">
-          Trust infrastructure protocol for autonomous AI agents. Identity, reputation, contracts, and discovery layer for the agentic economy.
-        </div>
-        <div class="project-stack">
-          <span>TypeScript SDK</span>
-          <span>Solidity</span>
-          <span>Base L2</span>
-          <span>Smart Contracts</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">Voice AI for Local Business</div>
-          <span class="project-status">Active</span>
-        </div>
-        <div class="project-desc">
-          Intelligent voice AI system for businesses with high inbound call volume. Full-stack solution including sales landing page and admin dashboard.
-        </div>
-        <div class="project-stack">
-          <span>Twilio</span>
-          <span>Claude Sonnet</span>
-          <span>ElevenLabs</span>
-          <span>React</span>
-        </div>
-      </div>
+      <div id="projectsList"></div>
     </section>
 
     <hr class="section-divider">
@@ -865,48 +828,7 @@
       <div class="section-header">
         <div class="section-label">Resume</div>
       </div>
-      <div class="resume-entry">
-        <div class="resume-period">2025 to Present</div>
-        <div class="resume-role">Co-Founder</div>
-        <div class="resume-org">Bettzy</div>
-        <div class="resume-desc">Peer-to-peer social wagering platform. Led product architecture; built wallet, escrow, and settlement flows; ran closed beta and iterated on retention loops.</div>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-period">2024 to Present</div>
-        <div class="resume-role">Founder</div>
-        <div class="resume-org">AgentVault</div>
-        <div class="resume-desc">Building trust infrastructure for autonomous AI agents: identity, reputation, contracts, and discovery protocols for the agentic economy.</div>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-period">2024 to Present</div>
-        <div class="resume-role">Founder</div>
-        <div class="resume-org">Voice AI Venture</div>
-        <div class="resume-desc">Designing and deploying intelligent voice AI systems for local businesses, focusing on dental offices and high-volume inbound call environments.</div>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-period">2022 to Present</div>
-        <div class="resume-role">Student</div>
-        <div class="resume-org">Western University</div>
-        <div class="resume-desc">Studying at the intersection of technology, finance, and fundamental inquiry. Active in networking across capital markets, entrepreneurship, and AI research.</div>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-period">2022 to 2024</div>
-        <div class="resume-role">Analyst</div>
-        <div class="resume-org">T&amp;F Capital</div>
-        <div class="resume-desc">Grew AUM from $150K to $225K via net-long growth equities and options. 47.80% cumulative return, 1.57 Sharpe. Built model portfolios spanning credit and derivatives.</div>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-period">Summer 2023</div>
-        <div class="resume-role">Operations Analyst</div>
-        <div class="resume-org">Dana Incorporated</div>
-        <div class="resume-desc">Led automation project on the EV battery line. Designed and deployed an automated plate-marking machine that eliminated human-error defects and cut production downtime.</div>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-period">Fall 2022</div>
-        <div class="resume-role">Equity Analyst</div>
-        <div class="resume-org">ABL Asset Management</div>
-        <div class="resume-desc">Built a 20-year rate model and updated DCFs for key holdings across a $500M+ AUM book. Authored an economic outlook on Fed policy, energy shortages, and sovereign risk.</div>
-      </div>
+      <div id="resumeList"></div>
     </section>
 
     <hr class="section-divider">
@@ -916,20 +838,7 @@
       <div class="section-header">
         <div class="section-label">About</div>
       </div>
-      <div class="about-content">
-        <p>
-          I moved to Canada to study at Western University. My work sits at the intersection of AI, financial markets, and philosophy. I'm drawn to the questions that don't resolve cleanly.
-        </p>
-        <p>
-          I write about consciousness, identity, impermanence, and the nature of the self, drawing on Buddhist teachings, neuroscience, physics, and direct experience. I believe the most important ideas live at the borders between disciplines.
-        </p>
-        <div class="pullquote">
-          "Living, fighting, and loving in a fat tailed world."
-        </div>
-        <p>
-          Outside of work, I'm an amateur Muay Thai fighter, poker player, and salsa dancer. I'm an avid reader with a strong interest in physics and philosophy. I speak English and Urdu, and I'm currently learning French.
-        </p>
-      </div>
+      <div class="about-content" id="aboutContent"></div>
     </section>
 
     <hr class="section-divider">
@@ -939,13 +848,8 @@
       <div class="section-header">
         <div class="section-label">Contact</div>
       </div>
-      <p>I'm always open to conversations about AI, markets, philosophy, or new ventures. Reach out below.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:mabdul83@uwo.ca">Email →</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/muhammad-abdullah-18b12919a/" target="_blank" rel="noopener">LinkedIn →</a>
-        <a class="contact-link" href="https://vsco.co/zane0803/gallery" target="_blank" rel="noopener">VSCO →</a>
-        <a class="contact-link" href="https://www.instagram.com/muhammadz.83/" target="_blank" rel="noopener">Instagram →</a>
-      </div>
+      <p id="contactBlurb"></p>
+      <div class="contact-links" id="contactLinks"></div>
     </section>
 
   </main>
@@ -1162,20 +1066,88 @@
 
     essayBack.addEventListener('click', closeEssay);
 
-    fetch('/writings.json', { cache: 'no-cache' })
-      .then(r => r.ok ? r.json() : Promise.reject(r.status))
-      .then(data => {
-        WRITINGS = Array.isArray(data) ? data : [];
-        renderHomeList();
-        const slug = window.location.hash.replace(/^#/, '');
-        if (slug) {
-          const w = WRITINGS.find(x => x.slug === slug);
-          if (w) openEssay(w);
-        }
-      })
-      .catch(() => {
+    function renderSite(site) {
+      if (!site) return;
+      if (site.hero) {
+        if (site.hero.tagline) document.getElementById('heroTagline').textContent = site.hero.tagline;
+        if (site.hero.name) document.getElementById('heroName').textContent = site.hero.name;
+        const desc = Array.isArray(site.hero.description) ? site.hero.description : [];
+        document.getElementById('heroDesc').innerHTML = desc.map(p => `<p>${escapeHtml(p)}</p>`).join('');
+      }
+      if (Array.isArray(site.domains)) {
+        document.getElementById('domainTags').innerHTML = site.domains.map(d => `<span>${escapeHtml(d)}</span>`).join('');
+      }
+      if (site.about) {
+        const a = site.about;
+        document.getElementById('aboutContent').innerHTML = `
+          ${a.paragraph_1 ? `<p>${escapeHtml(a.paragraph_1)}</p>` : ''}
+          ${a.paragraph_2 ? `<p>${escapeHtml(a.paragraph_2)}</p>` : ''}
+          ${a.pullquote ? `<div class="pullquote">${escapeHtml(a.pullquote)}</div>` : ''}
+          ${a.paragraph_3 ? `<p>${escapeHtml(a.paragraph_3)}</p>` : ''}
+        `;
+      }
+      if (site.contact) {
+        const c = site.contact;
+        document.getElementById('contactBlurb').textContent = c.blurb || '';
+        const links = [];
+        if (c.email)     links.push(`<a class="contact-link" href="mailto:${escapeHtml(c.email)}">Email →</a>`);
+        if (c.linkedin)  links.push(`<a class="contact-link" href="${escapeHtml(c.linkedin)}" target="_blank" rel="noopener">LinkedIn →</a>`);
+        if (c.vsco)      links.push(`<a class="contact-link" href="${escapeHtml(c.vsco)}" target="_blank" rel="noopener">VSCO →</a>`);
+        if (c.instagram) links.push(`<a class="contact-link" href="${escapeHtml(c.instagram)}" target="_blank" rel="noopener">Instagram →</a>`);
+        document.getElementById('contactLinks').innerHTML = links.join('');
+      }
+    }
+
+    function renderProjects(projects) {
+      const el = document.getElementById('projectsList');
+      if (!Array.isArray(projects) || !projects.length) { el.innerHTML = ''; return; }
+      el.innerHTML = projects.map(p => `
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name">${p.url ? `<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.name)}</a>` : escapeHtml(p.name)}</div>
+            ${p.status ? `<span class="project-status">${escapeHtml(p.status)}</span>` : ''}
+          </div>
+          ${p.description ? `<div class="project-desc">${escapeHtml(p.description)}</div>` : ''}
+          ${Array.isArray(p.stack) && p.stack.length ? `<div class="project-stack">${p.stack.map(s => `<span>${escapeHtml(s)}</span>`).join('')}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    function renderResume(entries) {
+      const el = document.getElementById('resumeList');
+      if (!Array.isArray(entries) || !entries.length) { el.innerHTML = ''; return; }
+      el.innerHTML = entries.map(r => `
+        <div class="resume-entry">
+          ${r.period ? `<div class="resume-period">${escapeHtml(r.period)}</div>` : ''}
+          ${r.role ? `<div class="resume-role">${escapeHtml(r.role)}</div>` : ''}
+          ${r.organization ? `<div class="resume-org">${escapeHtml(r.organization)}</div>` : ''}
+          ${r.description ? `<div class="resume-desc">${escapeHtml(r.description)}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    const jget = url => fetch(url, { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(r.status)).catch(() => null);
+
+    Promise.all([
+      jget('/writings.json'),
+      jget('/site.json'),
+      jget('/projects.json'),
+      jget('/resume.json'),
+    ]).then(([writings, site, projects, resume]) => {
+      WRITINGS = Array.isArray(writings) ? writings : [];
+      renderHomeList();
+      if (!writings) {
         listEl.innerHTML = '<div style="padding: 32px 0; font-family: var(--font-sans); color: var(--ink-4); font-size: 14px;">Writings feed unavailable.</div>';
-      });
+      }
+      renderSite(site);
+      renderProjects(projects);
+      renderResume(resume);
+      const slug = window.location.hash.replace(/^#/, '');
+      if (slug) {
+        const w = WRITINGS.find(x => x.slug === slug);
+        if (w) openEssay(w);
+      }
+    });
 
     /* ---- Nav logo returns home ---- */
     document.getElementById('navLogoLink').addEventListener('click', function (e) {

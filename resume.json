@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /resume.json
+---
+[
+{% assign published = site.resume | where: "published", true | sort: "order" %}
+{% for r in published %}
+  {
+    "period": {{ r.period | jsonify }},
+    "role": {{ r.role | jsonify }},
+    "organization": {{ r.organization | jsonify }},
+    "description": {{ r.description | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

@@ -4,11 +4,25 @@ description: Founder · Researcher · Builder
 collections:
   writings:
     output: false
+  projects:
+    output: false
+  resume:
+    output: false
 
 defaults:
   - scope:
       path: ""
       type: writings
+    values:
+      published: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      published: true
+  - scope:
+      path: ""
+      type: resume
     values:
       published: true
 
@@ -20,6 +34,10 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - netlify.toml
+  - vendor
 
 markdown: kramdown
 kramdown:

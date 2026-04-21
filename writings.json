@@ -10,10 +10,10 @@ permalink: /writings.json
     "type": {{ w.type | jsonify }},
     "title": {{ w.title | jsonify }},
     "date": "{{ w.date | date: '%Y-%m-%d' }}",
-    "read_time": {{ w.read_time | default: "" | jsonify }},
-    "description": {{ w.description | default: "" | jsonify }},
-    "dek": {{ w.dek | default: "" | jsonify }},
-    "tags": {{ w.tags | default: empty | jsonify }},
+    "read_time": {{ w.read_time | jsonify }},
+    "description": {{ w.description | jsonify }},
+    "dek": {{ w.dek | jsonify }},
+    "tags": {{ w.tags | jsonify }},
     "body_html": {{ w.content | strip_newlines | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}

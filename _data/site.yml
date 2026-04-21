@@ -1,0 +1,25 @@
+hero:
+  tagline: "Founder · Researcher · Builder"
+  name: "Muhammad"
+  description:
+    - "Working at the intersection of AI, markets, and fundamental inquiry."
+    - "Interested in what holds under pressure. Ideas, systems, and people."
+
+domains:
+  - Philosophy
+  - Consciousness
+  - AI
+  - Markets
+
+about:
+  paragraph_1: "I moved to Canada to study at Western University. My work sits at the intersection of AI, financial markets, and philosophy. I'm drawn to the questions that don't resolve cleanly."
+  paragraph_2: "I write about consciousness, identity, impermanence, and the nature of the self, drawing on Buddhist teachings, neuroscience, physics, and direct experience. I believe the most important ideas live at the borders between disciplines."
+  pullquote: "Living, fighting, and loving in a fat tailed world."
+  paragraph_3: "Outside of work, I'm an amateur Muay Thai fighter, poker player, and salsa dancer. I'm an avid reader with a strong interest in physics and philosophy. I speak English and Urdu, and I'm currently learning French."
+
+contact:
+  blurb: "I'm always open to conversations about AI, markets, philosophy, or new ventures. Reach out below."
+  email: "mabdul83@uwo.ca"
+  linkedin: "https://www.linkedin.com/in/muhammad-abdullah-18b12919a/"
+  vsco: "https://vsco.co/zane0803/gallery"
+  instagram: "https://www.instagram.com/muhammadz.83/"

@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /site.json
+---
+{
+  "hero": {
+    "tagline": {{ site.data.site.hero.tagline | jsonify }},
+    "name": {{ site.data.site.hero.name | jsonify }},
+    "description": {{ site.data.site.hero.description | default: empty | jsonify }}
+  },
+  "domains": {{ site.data.site.domains | default: empty | jsonify }},
+  "about": {
+    "paragraph_1": {{ site.data.site.about.paragraph_1 | jsonify }},
+    "paragraph_2": {{ site.data.site.about.paragraph_2 | jsonify }},
+    "pullquote": {{ site.data.site.about.pullquote | jsonify }},
+    "paragraph_3": {{ site.data.site.about.paragraph_3 | jsonify }}
+  },
+  "contact": {
+    "blurb": {{ site.data.site.contact.blurb | jsonify }},
+    "email": {{ site.data.site.contact.email | jsonify }},
+    "linkedin": {{ site.data.site.contact.linkedin | jsonify }},
+    "vsco": {{ site.data.site.contact.vsco | jsonify }},
+    "instagram": {{ site.data.site.contact.instagram | jsonify }}
+  }
+}
