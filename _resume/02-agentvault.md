@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 period: "2024 to Present"
 role: "Founder"
 organization: "AgentVault"
