@@ -1,7 +1,7 @@
 ---
 published: true
 type: Poetry
-title: English Rose, Poems
+title: English Rose, A Series of Poems
 date: 2026-04-21
 description: A collection about longing, identity, and the weight of loving
 cover_image: /assets/uploads/01.jpg
@@ -14,7 +14,7 @@ cover_image: /assets/uploads/01.jpg
 
 
 
-## **Who** 
+## **Who**
 
 There is a woman  
 I have never met  
@@ -39,7 +39,7 @@ my weight
 
 
 
-## **Many Faces** 
+## **Many Faces**
 
 I carried her  
 for years  
@@ -58,7 +58,7 @@ I do not know.
 
 
 
-## **Root** 
+## **Root**
 
 Somewhere early  
 something stayed:
@@ -74,7 +74,7 @@ beneath the rose.
 
 
 
-## **Ruin** 
+## **Ruin**
 
 I would give you my soul,  
 but it’s not whole.
@@ -92,4 +92,3 @@ but “me” is war.
 You want a home.  
 I am nowhere to stay.
 
-  
