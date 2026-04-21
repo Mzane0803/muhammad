@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 order: 2
 name: Voice AI for Local Business
 status: Active
