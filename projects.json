@@ -3,14 +3,14 @@ layout: null
 permalink: /projects.json
 ---
 [
-{% assign published = site.projects | where: "published", true | sort: "order" %}
-{% for p in published %}
+{%- assign visible = site.projects | where_exp: "p", "p.published != false" | sort: "order" -%}
+{%- for p in visible -%}
   {
     "name": {{ p.name | jsonify }},
     "status": {{ p.status | jsonify }},
     "description": {{ p.description | jsonify }},
     "stack": {{ p.stack | jsonify }},
     "url": {{ p.url | jsonify }}
-  }{% unless forloop.last %},{% endunless %}
-{% endfor %}
+  }{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
 ]
