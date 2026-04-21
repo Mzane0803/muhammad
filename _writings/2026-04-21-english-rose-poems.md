@@ -21,8 +21,6 @@ who lives in me.
 I have loved her  
 in a hundred different bodies.
 
-
-
 I learned to want her  
 before I knew  
 what wanting was.
