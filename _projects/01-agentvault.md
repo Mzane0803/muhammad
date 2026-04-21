@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 order: 1
 name: AgentVault
 status: Active
