@@ -29,6 +29,7 @@ collections:
         field: type
         pattern: "Paper"
     fields:
+      - { label: "Show on site (MUST be ON for the post to appear publicly — drafts stay hidden)", name: "published", widget: "boolean", default: true, hint: "Toggle OFF to save as a private draft. Toggle ON to publish to the live site." }
       - { label: "Type", name: "type", widget: "select", options: ["Essay", "Poetry", "Paper"], default: "Essay" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
@@ -36,7 +37,7 @@ collections:
       - { label: "Short description (one sentence, shown in the archive)", name: "description", widget: "text" }
       - { label: "Dek (optional italic subhead under the title)", name: "dek", widget: "text", required: false }
       - { label: "Filed under (tags)", name: "tags", widget: "list", required: false, default: [] }
-      - { label: "Published (uncheck to save as draft)", name: "published", widget: "boolean", default: true }
+      - { label: "Cover image (optional, shown at top of essay)", name: "cover_image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "projects"
@@ -48,13 +49,13 @@ collections:
     summary: "{{name}} · {{status}}"
     sortable_fields: ['order', 'name']
     fields:
-      - { label: "Order (lower = higher on page)", name: "order", widget: "number", default: 1, value_type: "int" }
+      - { label: "Show on site (MUST be ON to appear publicly)", name: "published", widget: "boolean", default: true, hint: "Toggle OFF to hide this project." }
+      - { label: "Order (lower number = higher on page)", name: "order", widget: "number", default: 1, value_type: "int" }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Status", name: "status", widget: "select", options: ["Active", "Shipped", "Archived"], default: "Active" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Stack (tech tags)", name: "stack", widget: "list", default: [] }
-      - { label: "External URL (optional)", name: "url", widget: "string", required: false }
-      - { label: "Published (uncheck to hide from site)", name: "published", widget: "boolean", default: true }
+      - { label: "External URL (optional, makes name clickable)", name: "url", widget: "string", required: false }
       - { label: "Notes (optional, not shown on site)", name: "body", widget: "markdown", required: false }
 
   - name: "resume"
@@ -66,12 +67,12 @@ collections:
     summary: "{{period}} · {{role}} · {{organization}}"
     sortable_fields: ['order', 'period']
     fields:
-      - { label: "Order (lower = higher on page)", name: "order", widget: "number", default: 1, value_type: "int" }
+      - { label: "Show on site (MUST be ON to appear publicly)", name: "published", widget: "boolean", default: true, hint: "Toggle OFF to hide this entry." }
+      - { label: "Order (lower number = higher on page)", name: "order", widget: "number", default: 1, value_type: "int" }
       - { label: "Period (e.g. '2025 to Present')", name: "period", widget: "string" }
       - { label: "Role", name: "role", widget: "string" }
       - { label: "Organization", name: "organization", widget: "string" }
       - { label: "Description (one or two sentences)", name: "description", widget: "text" }
-      - { label: "Published (uncheck to hide)", name: "published", widget: "boolean", default: true }
       - { label: "Notes (optional, not shown)", name: "body", widget: "markdown", required: false }
 
   - name: "settings"

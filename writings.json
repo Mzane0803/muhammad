@@ -14,6 +14,7 @@ permalink: /writings.json
     "description": {{ w.description | jsonify }},
     "dek": {{ w.dek | jsonify }},
     "tags": {{ w.tags | jsonify }},
+    "cover_image": {{ w.cover_image | jsonify }},
     "body_html": {{ w.content | strip_newlines | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}

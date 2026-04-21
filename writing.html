@@ -6,6 +6,8 @@
   <title>Writing · Muhammad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="alternate icon" href="/assets/favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
@@ -210,6 +212,7 @@
     </div>
     <h1 class="essay-title" id="essayTitle"></h1>
     <p class="essay-dek" id="essayDek"></p>
+    <img id="essayCover" alt="" style="display:none; width:100%; height:auto; margin: 0 0 48px; border-radius: 4px;">
     <div class="essay-body" id="essayBody"></div>
     <div class="essay-footer">
       <span id="essayTags"></span>
@@ -308,6 +311,9 @@
       const dekEl = document.getElementById('essayDek');
       if (w.dek) { dekEl.textContent = w.dek; dekEl.style.display = ''; }
       else { dekEl.textContent = ''; dekEl.style.display = 'none'; }
+      const coverEl = document.getElementById('essayCover');
+      if (w.cover_image) { coverEl.src = w.cover_image; coverEl.style.display = ''; }
+      else { coverEl.removeAttribute('src'); coverEl.style.display = 'none'; }
       document.getElementById('essayBody').innerHTML = w.body_html || '';
       const tagsEl = document.getElementById('essayTags');
       if (w.tags && w.tags.length) {
