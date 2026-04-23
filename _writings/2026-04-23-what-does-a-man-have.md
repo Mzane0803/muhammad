@@ -1,7 +1,7 @@
 ---
 published: true
 type: Poetry
-title: What does a man have ?
+title: What Does a Man Have ?, A Poem
 date: 2026-04-23
 description: Life, Love and War
 cover_image: /assets/uploads/M-Agincourt-3-4C-Oct05-scaled.jpg
