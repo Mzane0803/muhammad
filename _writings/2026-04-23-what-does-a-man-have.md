@@ -8,6 +8,10 @@ cover_image: /assets/uploads/M-Agincourt-3-4C-Oct05-scaled.jpg
 ---
 King Henry V and his weary soldiers
 
+
+
+&nbsp;
+
 What does a man have?
 
 If he has no pride,
