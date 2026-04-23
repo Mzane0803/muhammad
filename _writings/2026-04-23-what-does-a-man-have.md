@@ -6,7 +6,7 @@ date: 2026-04-23
 description: Life, Love and War
 cover_image: /assets/uploads/M-Agincourt-3-4C-Oct05-scaled.jpg
 ---
-King Henry V and his weary soldiers
+*King Henry V and his weary soldiers*
 
 
 
