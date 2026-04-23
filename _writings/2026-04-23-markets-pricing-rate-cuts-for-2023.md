@@ -25,8 +25,5 @@ In Canada, YoY inflation was steady at 6.9%, with the core CPI reading, which ex
 In the UK, inflation has been highly driven by the energy crisis that resulted from the Ukraine war and the increased demand associated to the start of winter, with gas prices up 36.9% and electricity up 16.9%. In the UK, CPI rose to 11.1% from last year, higher than the BOE’s 10.9% forecast. As such, this suggests that the central bank will likely increase rates further at its December meeting, with markets currently pricing an implied rate increase of 58bps.
 
 In contrast, the Euro-zone inflation has slowed for the first time in 1.5 years, with the November reading standing at 10%, a 0.4% positive surprise. Despite the positive news, ECB President Lagarde announced to the European Parliament that “it would surprise [her]” if price growth had peaked. This promotes the idea that the ECB may not be done with raising rates, with the markets pricing in a 56bps hike for the December meeting.  
-  
+
 *The above report was written for Ivey Sales & Trading in collaboration with Charles Johnson*  
-  
-  
-  
