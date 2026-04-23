@@ -3,7 +3,7 @@ published: true
 type: Poetry
 title: Hope, A poem.
 date: 2026-04-21
-description: A poem on yearning
+description: A Poem on Yearning
 cover_image: /assets/uploads/1_gMcSmmvvDwHXf2pak8n7Bg.webp
 ---
 The hope in our journey is no longer vivid
