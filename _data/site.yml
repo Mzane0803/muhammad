@@ -1,7 +1,7 @@
 seo:
   title: "Muhammad"
   description: "Founder · Researcher · Builder"
-  og_image: ""
+  og_image: "/assets/og-image.png"
 
 nav:
   home: "Home"
