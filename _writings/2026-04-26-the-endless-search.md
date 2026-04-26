@@ -3,7 +3,7 @@ published: true
 type: Poetry
 title: The Endless Search, A Series of Poems
 date: 2026-04-26
-dek: Hear What Does Not Call
+description: Hear What Does Not Call
 cover_image: /assets/uploads/ekojIDWNUQIAqwPMrjw2FEf90xFzO6N7QSKO0IbzTay7C3TKxebMElWmOUoTzoe6oiMTtiCmSxvzecZYjEG0Q0klKxtlFxHqvXssf0fg-2isxMmkwDh25ZCHKw8dhSH4ajcRzX0esn8xRT9ajhzaJgB4eroHUqwoxL-YZO1mYzFHbb1e6yp6tDaWCcF3fFW3.jpg
 ---
 *This collection was not written for or about any person*
@@ -66,8 +66,6 @@ Yet serves chains.
 
 He has not yet learned                                                                                                                                                     How to hear what does not call
 
-Again, again                                                                                                                                                                       Yea, again.
-
 ---
 
 He searches  
@@ -77,5 +75,3 @@ But for the end of searching.
 In women                                                                                                                                                                           In world                                                                                                                                                                             In himself 
 
 He has not yet learned                                                                                                                                                     How to hear what does not call
-
-Again, again                                                                                                                                                                       Yea, again.
