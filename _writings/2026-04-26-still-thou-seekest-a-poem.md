@@ -1,7 +1,7 @@
 ---
 published: true
 type: Poetry
-title: Still Thou Seekest, A poem
+title: Still Thou Seekest, A Poem
 date: 2026-04-26
 cover_image: /assets/uploads/anthony_dyck_armored_man.jpg
 ---
