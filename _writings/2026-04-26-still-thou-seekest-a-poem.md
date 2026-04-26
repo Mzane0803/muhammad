@@ -17,7 +17,7 @@ one tongue doth thirst.
 One eye seeks God,  
 one eye seeks gold.
 
-And still thou seekest,                                                                                                                                                      yea, still thou seekest.
+And still thou seekest,                                                                                                                                                   yea, still thou seekest.
 
 ---
 
@@ -33,5 +33,4 @@ and the ash.
 Thou art the hunger,  
 and the fast.
 
-And still thou seekest,  
-yea, still thou seekest.
+And still thou seekest,                                                                                                                                                       yea, still thou seekest.
