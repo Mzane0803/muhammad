@@ -10,10 +10,6 @@ cover_image: /assets/uploads/Paul_Delaroche_-_The_Execution_of_Lady_Jane_Grey.jp
 
 
 
-&nbsp;
-
-&nbsp;
-
 O heart of stone,  
 What hast thou won?
 
