@@ -40,6 +40,6 @@ Some hearts grow stone
 Too many winters.  
 Too many hands.
 
-When morning comes,                                                                                                                                                    they turn away
+When morning comes,                                                                                                                                                     they turn away
 
-There are gardens                                                                                                                                                             the dawn shall never bless.
+There are gardens                                                                                                                                                             the dawn shall never bless.
