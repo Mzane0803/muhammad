@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 type: Poetry
 title: Heart of Stone, A Series of Poems.
 date: 2026-04-26
