@@ -64,7 +64,7 @@ One sacred rest
 Names thyself free,  
 Yet serves chains.
 
-He has not yet learned                                                                                                                                                     How to hear what does not call
+He has not yet learned                                                                                                                                                     how to hear what does not call
 
 ---
 
@@ -74,4 +74,4 @@ But for the end of searching.
 
 In women                                                                                                                                                                           In world                                                                                                                                                                             In himself 
 
-He has not yet learned                                                                                                                                                     How to hear what does not call
+He has not yet learned                                                                                                                                                     how to hear what does not call
