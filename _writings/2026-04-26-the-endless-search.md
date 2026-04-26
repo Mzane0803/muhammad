@@ -1,7 +1,7 @@
 ---
 published: true
 type: Poetry
-title: The Endless Search, A Poem
+title: The Endless Search, A Series of Poems
 date: 2026-04-26
 dek: Hear What Does Not Call
 cover_image: /assets/uploads/ekojIDWNUQIAqwPMrjw2FEf90xFzO6N7QSKO0IbzTay7C3TKxebMElWmOUoTzoe6oiMTtiCmSxvzecZYjEG0Q0klKxtlFxHqvXssf0fg-2isxMmkwDh25ZCHKw8dhSH4ajcRzX0esn8xRT9ajhzaJgB4eroHUqwoxL-YZO1mYzFHbb1e6yp6tDaWCcF3fFW3.jpg
